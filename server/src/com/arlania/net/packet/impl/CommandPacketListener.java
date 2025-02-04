@@ -1726,7 +1726,7 @@ public class CommandPacketListener implements PacketListener {
                 player.sendMessage("Unable to send " + ItemDefinition.forId(item).getName() + " to " + name + ".");
             }
         }
-        if (command[0].equals("update1")) {
+        if (command[0].equals("update")) {
             int time = Integer.parseInt(command[1]);
             if (time > 0) {
                 GameServer.setUpdating(true);
@@ -1752,48 +1752,6 @@ public class CommandPacketListener implements PacketListener {
                 });
             }
         }
-		
-		
-		if (command[0].equals("update")) {
-			int time = Integer.parseInt(command[1]);
-			if (time > 0) {
-				GameServer.setUpdating(true);
-				for (Player players : World.getPlayers()) {
-					if (players == null) {
-						continue;
-					}
-					players.getPacketSender().sendSystemUpdate(time);
-				}
-				TaskManager.submit(new Task(time) {
-					@Override
-					protected void execute() {
-						for (Player player : World.getPlayers()) {
-							if (player != null) {
-								PlayerHandler.handleLogout(player);
-							}
-						}
-						World.saveWorldState();
-						GameServer.getLogger().info("Update task finished!");
-                
-						// Run the batch file after the update task finishes
-						try {
-							// Specify the full path to your "Update_and_Restart.bat" file
-							String command = "/home/quinn/Paescape/Update_and_Restart.sh";
-							ProcessBuilder processBuilder = new ProcessBuilder(command);
-							processBuilder.start(); // Execute the batch file
-							GameServer.getLogger().info("Update and restart batch file executed.");
-
-						} catch (IOException e) {
-							GameServer.getLogger().error("Error executing update batch file: " + e.getMessage());
-						}
-
-						// Exit the program (to restart the server)
-						System.exit(0);
-						stop();
-					}
-				});
-			}
-		}
 
         if (command[0].equals("normalperks")) {
             player.Berserker = 1;

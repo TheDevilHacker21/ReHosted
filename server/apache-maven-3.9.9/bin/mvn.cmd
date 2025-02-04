@@ -200,4 +200,3 @@ if "%MAVEN_BATCH_PAUSE%"=="on" pause
 if "%MAVEN_TERMINATE_CMD%"=="on" exit %ERROR_CODE%
 
 exit /b %ERROR_CODE%
->>>>>>> 2143bbb20b70adf69e071c090cb0e3d81b9cd197
