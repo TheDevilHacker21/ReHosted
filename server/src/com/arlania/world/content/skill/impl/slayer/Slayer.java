@@ -228,7 +228,7 @@ public class Slayer {
                 player.getPacketSender().sendMessage("Your Pet Duradead automatically repeats your last task!");
                 lastTask = slayerTask;
                 assignRepeatTask(player);
-            } else if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 30 && player.prestige >= 5) {
+            } else if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 30 && player.prestige >= 5 && player.prestige < 10) {
                 player.getPacketSender().sendMessage("You've completed your Slayer task!");
                 player.getPacketSender().sendMessage("Your Pet Duradead automatically repeats your last task!");
                 lastTask = slayerTask;
