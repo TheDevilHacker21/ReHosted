@@ -223,8 +223,17 @@ public class Slayer {
             player.getAchievementTracker().progress(AchievementData.COMPLETE_1000_SLAYER_TASKS, 1);
 
             givePoints(slayerMaster);
-
-            if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 50) {
+            if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 10 && player.prestige >= 10) {
+                player.getPacketSender().sendMessage("You've completed your Slayer task!");
+                player.getPacketSender().sendMessage("Your Pet Duradead automatically repeats your last task!");
+                lastTask = slayerTask;
+                assignRepeatTask(player);
+            } else if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 30 && player.prestige >= 5) {
+                player.getPacketSender().sendMessage("You've completed your Slayer task!");
+                player.getPacketSender().sendMessage("Your Pet Duradead automatically repeats your last task!");
+                lastTask = slayerTask;
+                assignRepeatTask(player);
+            } else if (PetAbilities.checkPetAbilities(player, "duradead") && RandomUtility.inclusiveRandom(1, 100) > 50) {
                 player.getPacketSender().sendMessage("You've completed your Slayer task!");
                 player.getPacketSender().sendMessage("Your Pet Duradead automatically repeats your last task!");
                 lastTask = slayerTask;
