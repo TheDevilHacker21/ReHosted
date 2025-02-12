@@ -24,7 +24,7 @@ public class LooterOptions {
 
         player.getPacketSender().sendString(8846, ((player.looterSettings[0] == 0) ? "@red@" : (player.looterSettings[0] == 1) ? "@yel@" : "@gre@") + "Leather"); //1st Button
         player.getPacketSender().sendString(8823, ((player.looterSettings[1] == 0) ? "@red@" : (player.looterSettings[1] == 1) ? "@yel@" : "@gre@") + "Bars"); //2nd Button
-        player.getPacketSender().sendString(8824, ((player.looterSettings[2] == 0) ? "@red@" : (player.looterSettings[2] == 1) ? "@yel@" : "@gre@") + "Herbs"); //3rd Button
+        player.getPacketSender().sendString(8824, ((player.looterSettings[2] == 0) ? "@red@" : (player.looterSettings[2] == 1) ? "@yel@" : "@gre@") + "Herbs+Seeds"); //3rd Button
         player.getPacketSender().sendString(8827, ((player.looterSettings[3] == 0) ? "@red@" : (player.looterSettings[3] == 1) ? "@yel@" : "@gre@") + "Logs"); //4th Button
         player.getPacketSender().sendString(8837, ((player.looterSettings[4] == 0) ? "@red@" : (player.looterSettings[4] == 1) ? "@yel@" : "@gre@") + "Ores"); //5th Button
         player.getPacketSender().sendString(8840, ((player.looterSettings[5] == 0) ? "@red@" : (player.looterSettings[5] == 1) ? "@yel@" : "@gre@") + "Gems"); //6th Button

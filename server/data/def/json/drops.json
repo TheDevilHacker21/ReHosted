@@ -687,7 +687,7 @@
 },
 
 { //Kurask
-  "npcIds": [1608],
+  "npcIds": [14410],
   "drops": [
     { "id": 1163 , "count": [1], "chance": 5},
     { "id": 1127 , "count": [1], "chance": 5},

@@ -377,7 +377,13 @@ public class Equipment extends ItemContainer {
             getPlayer().getPacketSender().sendMessage("Your ring already has this power.");
         }
 
-
+        if (itemId == 19669 && !getPlayer().lightbearerOptions[10]) {
+            getPlayer().getPacketSender().sendMessage("You've added the power of a Ring of Vigour to your Lightbearer!");
+            getPlayer().lightbearerOptions[10] = true;
+            getPlayer().getInventory().delete(itemId, 1);
+        } else if (itemId == 12601 && getPlayer().lightbearerOptions[10]) {
+            getPlayer().getPacketSender().sendMessage("Your ring already has this power.");
+        }
     }
 
     public int handleLightbearerBonuses(int bonusType) {

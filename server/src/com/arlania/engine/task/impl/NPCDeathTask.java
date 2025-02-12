@@ -100,14 +100,14 @@ public class NPCDeathTask extends Task {
 
                         if (killer.wildSavior > 0 && killer.getLocation() == Location.WILDERNESS) {
                             if (killer.wildSavior == 3) {
-                                killer.heal(30);
-                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 30);
+                                killer.heal(100);
+                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 300);
                             } else if (killer.wildSavior == 2) {
-                                killer.heal(20);
-                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 20);
+                                killer.heal(60);
+                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 100);
                             } else if (killer.wildSavior == 1) {
-                                killer.heal(10);
-                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 10);
+                                killer.heal(40);
+                                killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getCurrentLevel(Skill.PRAYER) + 40);
                             }
                             if (killer.getSkillManager().getCurrentLevel(Skill.PRAYER) > killer.getSkillManager().getMaxLevel(Skill.PRAYER))
                                 killer.getSkillManager().setCurrentLevel(Skill.PRAYER, killer.getSkillManager().getMaxLevel(Skill.PRAYER));

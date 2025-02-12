@@ -162,7 +162,7 @@ public class Player extends Character {
     public int restorationTick = 0;
     public int activityTicks = 0;
     public int doubleExpTimer = 2000000000;
-    public boolean[] lightbearerOptions = {false, false, false, false, false, false, false, false, false, false};
+    public boolean[] lightbearerOptions = {false, false, false, false, false, false, false, false, false, false, false};
     public int[] achievementAbilities = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     public String lastGameMessage = "";
 
@@ -968,9 +968,15 @@ public class Player extends Character {
         this.session = playerIO;
     }
 
+    //Ring of Vigour effect, auto specialattack
     public static void activateSpecial(Player player) {
 
+        //Vigour
         if (!player.isSpecialActivated() && player.getEquipment().contains(19669) && player.getSpecialPercentage() == 100)
+            CombatSpecial.activate(player);
+
+            //Lightbearer with Vigour attached
+        else if (!player.isSpecialActivated() && player.getEquipment().contains(21077) && player.getSpecialPercentage() == 100 && player.lightbearerOptions[10])
             CombatSpecial.activate(player);
 
     }
@@ -1041,7 +1047,7 @@ public class Player extends Character {
         //player.looterSettings
         //[0] leather
         //[1] bars
-        //[2] herbs
+        //[2] herbs and seeds
         //[3] logs
         //[4] ores
         //[5] gems
@@ -1061,7 +1067,7 @@ public class Player extends Character {
                 type = 0;
             else if (item.getName().toLowerCase().contains("bar"))
                 type = 1;
-            else if (item.getName().toLowerCase().contains("grimy"))
+            else if (item.getName().toLowerCase().contains("grimy") || item.getName().toLowerCase().contains("seed"))
                 type = 2;
             else if (item.getName().toLowerCase().contains("log"))
                 type = 3;
@@ -1105,7 +1111,7 @@ public class Player extends Character {
                 }
                 break;
 
-            case 2: //herbs
+            case 2: //herbs and seeds
                 //herbicide
                 if (player.looterSettings[2] == 0) {
                     List<Integer> validHerbs = Arrays.asList(199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 2485, 2486, 3049, 3050, 3051, 3052);
