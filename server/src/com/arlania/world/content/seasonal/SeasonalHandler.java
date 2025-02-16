@@ -275,7 +275,6 @@ public class SeasonalHandler {
         newAcc.setPlayerLocked(false);
         newAcc.setexprate(5);
         newAcc.linkedMain = player.getUsername();
-		newAcc.getInventory().add(1856, 1).add(2948, 1).add(7930, 1).add(964, 1).add(3619, 1).add(8851, 50000).add(19864, 5000).add(9941, 1);
 
 
         player.getPacketSender().sendMessage("@red@Seasonal accounts will be removed after the season is over.");
