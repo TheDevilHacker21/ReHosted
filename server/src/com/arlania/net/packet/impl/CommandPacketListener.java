@@ -125,8 +125,6 @@ public class CommandPacketListener implements PacketListener {
             } else {
                 SeasonalHandler.newSeasonal(player, name.toString());
             }
-
-
         }
 
         if (command[0].equals("easter")) {

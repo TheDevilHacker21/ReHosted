@@ -35,12 +35,12 @@ public class ConnectionHandler {
             return LoginResponses.LOGIN_DISABLED_ACCOUNT;
         }
 
-        if(player.getGameMode() == GameMode.SEASONAL_IRONMAN) {
+/*        if(player.getGameMode() == GameMode.SEASONAL_IRONMAN) {
             if (player.seasonMonth != GameLoader.getMonth() || player.seasonYear != GameLoader.getYear()) {
                 return LoginResponses.EXPIRED_SEASONAL_ACCOUNT;
             }
         }
-
+*/
         if (isBlocked(host)) {
             return LoginResponses.LOGIN_REJECT_SESSION;
         }
