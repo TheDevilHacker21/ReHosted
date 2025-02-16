@@ -1343,8 +1343,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 2
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -1356,8 +1356,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 2
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -16860,8 +16860,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 2
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -16873,8 +16873,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 2
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -17562,8 +17562,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 5
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -18056,8 +18056,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 3
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
@@ -18758,8 +18758,8 @@
       "z": 0
     },
     "walking-policy": {
-      "coordinate": true,
-      "radius": 5
+      "coordinate": false,
+      "radius": 0
     }
   },
   {
