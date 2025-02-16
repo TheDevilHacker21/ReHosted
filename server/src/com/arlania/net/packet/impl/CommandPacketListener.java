@@ -134,6 +134,7 @@ public class CommandPacketListener implements PacketListener {
             StringBuilder name = new StringBuilder();
             for (int i = 1; i < command.length; i++) {
                 name.append(command[i]).append((i == command.length - 1) ? "" : " ");
+                player.getPacketSender().sendMessage("Use command ::pets on your seasonal account for all pets!");
             }
 
             if (!player.getSubscription().isSubscriber()) {
