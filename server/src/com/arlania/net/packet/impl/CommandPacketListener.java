@@ -100,6 +100,23 @@ public class CommandPacketListener implements PacketListener {
 
     private static void playerCommands(final Player player, String[] command, String wholeCommand) {
 
+        if (command[0].equalsIgnoreCase("pets")) {
+            player.getInventory().add(2948, 1); //guide book
+            player.getInventory().add(7930, 1); //guide book
+            player.getInventory().add(964, 1); //guide book
+            player.getInventory().add(3619, 1); //guide book
+            player.getInventory().add(11157, 1); //guide book
+            player.getInventory().add(212399, 1); //guide book
+            player.getInventory().add(9941, 1);
+            player.getInventory().add(6550, 1);
+            player.getInventory().add(8740, 1);
+            player.getInventory().add(212335, 1);
+            player.getInventory().add(8851, 50000); //guide book
+            player.getInventory().add(19864, 5000); //guide book
+            player.getPacketSender().sendMessage("@blu@Use all pets on Patrick west of bank then");
+            player.getPacketSender().sendMessage("@blu@Enable abilities in the perk menu and keep a holiday pet out.");
+        }
+
         if (command[0].equalsIgnoreCase("endevent")) {
             GlobalEventHandler.endGlobalEvent();
         }        
