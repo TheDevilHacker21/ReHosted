@@ -385,8 +385,10 @@ public class SkillManager {
 
 
         //experience = BrawlingGloves.getExperienceIncrease(player, skill.ordinal(), experience);
-
-        if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) || (player.doubleExpEvent && player.personalEvent) || player.activeDoubleXP) {
+        if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) && player.activeDoubleXP && GameLoader.getDay() == 6) {
+            experience *= 4;
+            bonusFactor *= 2;
+        } else if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) || (player.doubleExpEvent && player.personalEvent) || player.activeDoubleXP) {
             experience *= 2;
             bonusFactor *= 2;
         }

@@ -41,7 +41,9 @@ public class InformationPanel {
 
         int xprate = player.getexprate();
 
-        if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) || player.doubleExpEvent || player.activeDoubleXP)
+        if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) && player.activeDoubleXP && GameLoader.getDay() == 6)
+            xprate *= 4;
+        else if (GlobalEventHandler.effectActive(GlobalEvent.Effect.DOUBLE_EXP) || player.doubleExpEvent || player.activeDoubleXP)
             xprate *= 2;
 
         int daysLeft = player.subscriptionEndDate - GameLoader.getEpoch();
