@@ -191,19 +191,6 @@ public class Skiller {
         if (amountToSkill > 1) {
             amountToSkill--;
         } else {
-            player.getPacketSender().sendMessage("").sendMessage("You've completed your Skiller task! Return to Max for another task.");
-            taskStreak++;
-
-            player.totalSkillerTasks++;
-
-            player.getAchievementTracker().progress(AchievementData.COMPLETE_10_SKILLER_TASKS, 1);
-            player.getAchievementTracker().progress(AchievementData.COMPLETE_100_SKILLER_TASKS, 1);
-            player.getAchievementTracker().progress(AchievementData.COMPLETE_1000_SKILLER_TASKS, 1);
-
-            boolean wildyTask = "wild" == skillerTask.getType();
-
-            givePoints(skillerTask, wildyTask);
-
             if (PetAbilities.checkPetAbilities(player, "tryout") && RandomUtility.inclusiveRandom(1, 100) > 50) {
                 player.getPacketSender().sendMessage("You've completed your Skiller task!");
                 player.getPacketSender().sendMessage("Your Pet Tryout automatically repeats your last task!");
@@ -211,24 +198,35 @@ public class Skiller {
                 assignRepeatTask(player);
             } else {
                 player.getPacketSender().sendMessage("You've completed your Skiller task! Return to Max for another one.");
-                lastTask = skillerTask;
-                skillerTask = SkillerTasks.NO_TASK;
+                taskStreak++;
+
+                player.totalSkillerTasks++;
+
+                player.getAchievementTracker().progress(AchievementData.COMPLETE_10_SKILLER_TASKS, 1);
+                player.getAchievementTracker().progress(AchievementData.COMPLETE_100_SKILLER_TASKS, 1);
+                player.getAchievementTracker().progress(AchievementData.COMPLETE_1000_SKILLER_TASKS, 1);
+
+                boolean wildyTask = "wild" == skillerTask.getType();
+
+                givePoints(skillerTask, wildyTask);
+
+                if (player.getSkillerSkill() == Skill.WOODCUTTING)
+                    skillerTask = SkillerTasks.NO_TASK;
+                else if (player.getSkillerSkill() == Skill.MINING)
+                    skillerTask = SkillerTasks.NO_TASK_MINING;
+                else if (player.getSkillerSkill() == Skill.FISHING)
+                    skillerTask = SkillerTasks.NO_TASK_FISHING;
+                else if (player.getSkillerSkill() == Skill.DUNGEONEERING)
+                    skillerTask = SkillerTasks.NO_TASK_DG;
+                else if (player.getSkillerSkill() == Skill.HUNTER)
+                    skillerTask = SkillerTasks.NO_TASK_HUNTER;
+                else if (player.getSkillerSkill() == Skill.THIEVING)
+                    skillerTask = SkillerTasks.NO_TASK_THIEVING;
                 amountToSkill = 0;
             }
 
 
-            if (player.getSkillerSkill() == Skill.WOODCUTTING)
-                skillerTask = SkillerTasks.NO_TASK;
-            else if (player.getSkillerSkill() == Skill.MINING)
-                skillerTask = SkillerTasks.NO_TASK_MINING;
-            else if (player.getSkillerSkill() == Skill.FISHING)
-                skillerTask = SkillerTasks.NO_TASK_FISHING;
-            else if (player.getSkillerSkill() == Skill.DUNGEONEERING)
-                skillerTask = SkillerTasks.NO_TASK_DG;
-            else if (player.getSkillerSkill() == Skill.HUNTER)
-                skillerTask = SkillerTasks.NO_TASK_HUNTER;
-            else if (player.getSkillerSkill() == Skill.THIEVING)
-                skillerTask = SkillerTasks.NO_TASK_THIEVING;
+
 
         }
 
