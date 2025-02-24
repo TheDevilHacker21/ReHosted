@@ -209,7 +209,7 @@ public class Skiller {
                 boolean wildyTask = "wild" == skillerTask.getType();
 
                 givePoints(skillerTask, wildyTask);
-
+                lastTask = skillerTask;
                 if (player.getSkillerSkill() == Skill.WOODCUTTING)
                     skillerTask = SkillerTasks.NO_TASK;
                 else if (player.getSkillerSkill() == Skill.MINING)
